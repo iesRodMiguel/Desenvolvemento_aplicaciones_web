@@ -1,0 +1,47 @@
+Indica 3 métodos útiles de PrintStream indicando para qué se utilizan e un exemplo do seu uso:
+
+1. Método println:
+
+- Sintaxis: public void println()
+
+- ¿Qué hace?
+
+    Termina la línea actual escribiendo un salto de línea con la string 'line separator'. La string 'line separator' está definida por la propiedad del sistema line.separator, y no es necesariamente un único new line character ('\n'). 
+    
+   En castellano lo que hace es imprimir en consola una línea con los caracteres que introduzcas. El hecho de que termine con 'la string line separator' lo que hace es asegurar que lo último que pase en la línea que vas a escribir, es que haya un salto de linea.
+
+2. Método checkError:
+
+- Sintaxis: public boolean checkError()
+
+- ¿Qué hace?
+
+"Flushes the stream if it's not closed and checks its error state." Esto no lo entiendo bien. No se qué es "flushes the stream" pero me gustaría saberlo.
+
+Lo que sé es que esté método nos va a devolver un boolean, es decir: true o false. Además nos idican que sólamente devolverá 'TRUE' si encuentra una IOException * o si el método setError es/ ha sido invocado. (El método setError tiene la función de asignar el valor true al error state stream).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* IOException
+
+Es una excepción en Java que indica que se produjo un error durante una operación de entrada/salida (I/O)(In/Out). Si el programa intenta leer un archivo que no existe, acceder a una URL mal formada o trabajar con un flujo de datos interrumpido, esta excepción aparecerá para advertirte que algo no salió como se esperaba.
+
+Carácteristicas importantes de las IOException:
+
+    - Tiene múltiples subclases: FileNotFoundException,SocketException y EOFException, cada una diseñada para casos específicos de errores I/O.
+    - Hereda de la clase Exception, lo que la convierte en parte del sistema estándar de manejo de errores en Java.
+    - Es una excepción checked, lo que significa que el compilador te obliga a manejarla (ya sea con un bloque try-catch o declarándola con throws IOException en el método que la lanza).
+ 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Método print double:
+
+- Síntaxis: public void print (double d)
+
+-  ¿Qué hace?
+
+Imprime un número con precisión de 2 decimáles.
+
+La cadena producida por el método (de la clase String se deduce?) String.valueOf(double) se traduce a bytes de acuerdo al set de caracteres (charset) por defecto. Estos bytes se escriben exáctamente de la misma forma que en el método write(int).
+
+

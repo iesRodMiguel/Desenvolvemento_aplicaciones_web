@@ -1,0 +1,15 @@
+cuando se lanza una excepcion se suele indicar en la cabecera del método que se lanza.
+
+En excepciones vigiladas de hecho es obligatorio.
+En excepciones no vigiladas como 'IllegalArgumentException' no es obligatorio. --> Consultar en los apuntes o en la web que es una excepcion vigilada y no vigilada.
+-------------------------------------------------------------
+En el examen habrá todo lo del ejercicio agenda pero también pueden entrar otras cosas como herencia (dijo hoy xavi)
+------------------------------------------------------------
+Cuando se marca un parámetro como private final => no se puede modificar ni siquiera desde dentro de la clase. (por accidente en un método que diseño dentro de la clase modifico el nombre. Esto lo evita)
+
+Para los paramétros que quiera que no se puedan modificar del ejercicio de xavi les pongo el private final. !OJO EL ENUNCIADO ESTÁ MAL --> LA DESCRIPCION ES LO QUE NO SE SE DEBE PODER CAMBIAR, NO LA DIRECCION
+--------------------------------------------------------------
+
+agenda[i] == null es lo mismo que agenda[i] == ""; es decir si el contacto no existe ,o mejor,está vacío, lo guardo.
+
+por eso si agenda[i] no es == null, lanzo la excepcion StorageFull, de almacenamiento lleno, es decir, el contacto ya esta guardado (alamcenmaiento lleno).

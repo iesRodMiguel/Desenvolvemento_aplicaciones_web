@@ -1,0 +1,15 @@
+- A la gorda drogala.
+- Anita, la gorda lagartona, no traga la droga latina.
+- Dábale arroz a la zorra el abad.
+- Sé verlas al revés.
+- La ruta nos aportó otro paso natural.
+- Anás usó tu auto, Susana.
+- A mamá, Roma le aviva el amor a papá, y a papá, Roma le aviva el amor a mamá.
+- Somos o no somos.
+- Yo hago yoga hoy.
+- Isaac no ronca así.
+- Se corta Sarita a tiras atroces.
+- Amigo, no gima.
+- Odiosa, ¿has oído?
+- A ti no, bonita.
+- ¿Acaso hubo búhos acá?

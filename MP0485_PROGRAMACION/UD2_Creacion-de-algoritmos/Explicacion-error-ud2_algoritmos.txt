@@ -1,0 +1,96 @@
+1. Causa exacta del fallo
+
+Tu código, a partir del comentario:
+
+/*1.- Un programa que solicite un número e indique o seu primeiro divisor maior de 1*/
+        
+Ud2_algoritmos myObj = new Ud2_algoritmos();
+
+Scanner myObj = new Scanner(System.in);
+String userName;
+
+
+falla en compilación, no en ejecución.
+El compilador te mostrará un error parecido a esto:
+
+error: variable myObj is already defined in method main(String[])
+
+🧠 2. Explicación técnica
+
+En Java (según la especificación oficial del lenguaje:
+👉 The Java Language Specification – Variables
+),
+no puedes declarar dos variables locales con el mismo nombre dentro del mismo bloque ({ ... }).
+
+Aquí estás declarando dos veces una variable llamada myObj dentro del mismo método main:
+
+Ud2_algoritmos myObj = new Ud2_algoritmos();  // primera declaración
+Scanner myObj = new Scanner(System.in);       // segunda declaración (prohibida)
+
+⚙️ 3. Solución
+
+Debes usar nombres diferentes para las variables.
+Por ejemplo:
+
+Ud2_algoritmos objAlgoritmos = new Ud2_algoritmos();
+Scanner sc = new Scanner(System.in);
+
+
+Y tu bloque corregido quedaría así:
+
+/*1.- Un programa que solicite un número e indique o seu primeiro divisor maior de 1*/
+
+Ud2_algoritmos objAlgoritmos = new Ud2_algoritmos();
+
+Scanner sc = new Scanner(System.in);
+String userName;
+
+// Enter username and press Enter
+System.out.println("Enter username"); 
+userName = sc.nextLine();   
+
+System.out.println("Username is: " + userName);
+
+⚠️ 4. Otro detalle importante
+
+También debes importar la clase Scanner al inicio del archivo:
+
+import java.util.Scanner;
+
+
+Sin este import, el compilador no sabrá qué es Scanner (ver Java SE API docs
+).
+
+✅ 5. Resultado final corregido
+package ud2_algoritmos;
+
+import java.util.Scanner; // necesario
+
+public class Ud2_algoritmos {
+
+    public static void main(String[] args) {
+        Ud2_algoritmos c = new Ud2_algoritmos();
+        int d = c.restar(9,3);
+        
+        System.out.println("Ola MUndo");
+        
+        String texto = "Ola";
+        System.out.println(texto);
+        
+        int num = 52;
+        System.out.println(num);
+        
+        System.out.println("Resultado invocar método restar(9,3): " + d);
+
+        /*1.- Un programa que solicite un número e indique o seu primeiro divisor maior de 1*/
+
+        Ud2_algoritmos objAlgoritmos = new Ud2_algoritmos();
+        Scanner sc = new Scanner(System.in);
+        String userName;
+
+        System.out.println("Enter username"); 
+        userName = sc.nextLine();   
+        System.out.println("Username is: " + userName);
+    }
+}
+

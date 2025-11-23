@@ -1,0 +1,9 @@
+- LocalDate java: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+
+- DateTimeFormatter java: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
+
+- throw exception java: https://docs.oracle.com/javase/tutorial/essential/exceptions/throwing.html
+
+- try catch java: https://docs.oracle.com/javase/tutorial/essential/exceptions/catch.html
+
+-class pattern java: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html

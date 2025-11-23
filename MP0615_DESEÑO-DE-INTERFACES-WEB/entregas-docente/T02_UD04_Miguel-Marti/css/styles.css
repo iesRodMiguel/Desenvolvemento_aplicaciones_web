@@ -1,0 +1,169 @@
+/*FONTS*/
+
+@font-face {  
+  font-family: "Cultive-Mono";  
+  src: url("../fonts/Cultive-Mono.woff2") format("woff2");
+       /* url("../fonts/MiFuente-Regular.woff") format("woff");   */
+  font-weight: 400;  
+  font-style: normal;  
+  font-display: swap;  
+} 
+@font-face {  
+  font-family: "Droid-Sans-Mono";  
+  src: url("../fonts/Droid-Sans-Mono.woff2") format("woff2");
+       /* url("../fonts/MiFuente-Regular.woff") format("woff");   */
+  font-weight: 400;  
+  font-style: normal;  
+  font-display: swap;  
+} 
+
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+body {
+/*Reseteamos margenes, paddings y el comportamiento del contenido desbordado*/
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+p {
+ /*Tambien reseteamos los margenes de los parrafos --> En la consola del navegador se observa que tienen aplicado
+ un margin-block-start y un margin-block-end de 1em*/ 
+  margin: 0;
+}
+header {
+  background-color: rgb(177, 177, 177);
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+header img{
+  order: -3;
+}
+
+#main{
+  width: 100%;
+  display: flex;
+}
+ #main > :first-child { 
+  flex: 3 0 60%; /* Equivalente a definir esta propiedad en section{}, ya que es el primer elemento hijo directo del div con id="main" */
+}
+ 
+nav, aside {
+  flex: 1 1 20%;
+}
+section {
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+section h2 {
+  font-size: 2em;
+  color: rgb(252, 151, 0);
+}
+form {
+  width: 90%;
+  padding: 2em;
+  background-color: rgb(74, 146, 74);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
+form input, textarea {
+  width: 90%;
+  padding: 1em;
+}
+form :last-child {
+  width: 15%;
+  font-size: large;
+  color: rgb(0, 49, 95);
+  border: solid 1px rgb(104, 167, 104);
+  background-color: rgba(165, 42, 42, 0);
+}
+form :last-child:hover {
+  cursor: pointer;
+  color: rgb(108, 165, 219);
+  background-color: rgb(65, 107, 65);
+}
+nav {
+  background-color: rgb(193, 221, 192);
+  font-size: 1.5em;
+  padding: 1.5em 0;
+  display: flex;
+  justify-content: flex-start;
+  
+  
+  order: -1;
+}
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+nav ul li a{
+  text-decoration: none;
+}
+aside {
+  background-color: rgb(193, 221, 192);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /** ¿Como puedo dividir el texto en dos columnas sin tocar el html?*/
+}
+aside h1{
+  color: green;
+  width: 60%;
+}
+footer {
+  background-color: rgb(204, 204, 204);
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*CLASES*/
+
+.divUno{
+  background-color: rgb(41, 3, 110);
+  height: 20px;
+  width: 6em;
+  clip-path: polygon(15% 2%, 30% 62%, 100% 50%, 0% 100%);
+
+
+  align-self: flex-start;
+   /**¿Como podría hacer para darle a este div esa forma irregular que aparece en la solución?*/
+}
+
+.divDos {
+  background-image: radial-gradient(rgb(171, 255, 171), pink, rgb(0, 217, 255));
+  min-height: 40px;
+  min-width: 8em; 
+  align-self: center;
+  
+   /**¿Como podría hacer para darle a este div esa forma irregular que aparece en la solución?*/
+}
+
+.divTres {
+  background-color: rgb(234, 0, 255);
+  min-height: 40px;
+  min-width: 8em; 
+  border-radius: 10dvh;
+  align-self: flex-end;
+}
+
+.autor{
+  font-size: 2.5dvh;
+  color: rgb(252, 151, 0);
+
+}
+.redes-sociales a{
+  color: rgb(122, 13, 13);
+  font-size: 2.5dvh;
+
+}
+

@@ -1,0 +1,293 @@
+/* Limpiar valores */
+* {
+  box-sizing: border-box; /* El valor que pones en width y height incluye el contenido, el padding y el border. */
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  color: #272949;
+}
+
+/* ### Diferencias entre `height`, `min-height` y `max-height`
+
+- `height`
+  - Fija una altura exacta.
+  - El elemento intentará medir exactamente ese valor.
+  - Si el contenido no cabe, puede desbordar o generar scroll interno.
+  - Útil para componentes con tamaño conocido (p. ej., barra fija de 56px).
+
+- `min-height`
+  - Altura mínima. El elemento puede crecer por contenido más allá de ese valor, pero nunca ser más pequeño.
+  - Evita cortes de contenido y asegura “altura base”.
+  - Muy útil para layouts: `min-height: 100dvh` en el contenedor principal.
+
+- `max-height`
+  - Altura máxima. El elemento puede ser más pequeño si hay poco contenido, pero no más alto que ese límite.
+  - Si el contenido supera el límite, habrá overflow (visible o con scroll si se define).
+  - Útil para paneles colapsables, listas con scroll: `max-height: 50vh; overflow:auto;`.
+
+Reglas de precedencia cuando coinciden:
+- Si `height` y `min-height` entran en conflicto, manda el mayor valor efectivo.
+- Si `height` y `max-height` entran en conflicto, manda el menor valor efectivo.
+- Si se definen los tres: prevalece el rango marcado por `min-height` y `max-height`; `height` se “recorta” dentro de ese rango.
+
+Ejemplos:
+- Card adaptable: `min-height: 200px;` (crece si hay más texto).
+- Modal con scroll: `max-height: 80vh; overflow: auto;`.
+- Barra exacta: `height: 64px;`. */
+
+
+/* Contenedor principal */
+.contenedor {
+  margin: 0 auto;
+  width: 90%;  /* Define el ancho como el 90% del ancho disponible */
+  max-width: 100vw; /* Limita el ancho máximo para que no exceda el viewport */
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* viewport dinámico */
+}
+
+/* Header */
+.header {
+  background: #234211; /* Establece el fondo en un color */
+  color: #eaf4ff; /* Establece un color para el texto */
+  border: 1px solid rgba(225, 225, 226, 0.8); /* Aplica un borde con opacidad para suavizar el efecto */
+  box-shadow: 0 0 10px #ccc; /* Agrega una sombra suave alrededor de la cabecera */
+
+  display: flex;
+  align-items: center;   /* Centra los elementos verticalmente dentro de la cabecera */
+  justify-content: center;   /* Centra los elementos horizontalmente dentro de la cabecera */
+  padding: 1.25rem;
+}
+.header h2{
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+/* Inicio contenido--> Esta formado por main y por aside */
+/* Contenedor para el área de contenido principal */
+.contenido {
+  display: flex;
+  gap: 20px; /* Espacio entre los elementos dentro de .contenido */
+  background: rgb(213, 230, 224);
+  padding: 20px;
+  flex: 1; /* ocupa el alto restante */
+}
+
+/* Main */
+.main {
+  flex: 1 1 65%; /* Ocupa aproximadamente el 65% del ancho de .contenido y permite que la sección crezca/decrezca si hay espacio disponible */
+  order: 2; /* Ordena esta sección para que aparezca después de la barra lateral */
+
+  display: flex; /* Activa Flexbox dentro de .main */
+  flex-direction: column; /* Organiza elementos internos en columna */
+  gap: 16px;
+}
+.main .info h1,
+.main .info h2 {
+  color: rgb(144, 226, 43);
+  font-weight: 300;
+  font-size: 1,25rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.main .info p {
+  font-size: 1rem;
+  text-align: justify;
+}
+
+/* Formulario (solo Flex) */
+.formulario {
+  border: 1px solid #ccc;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05) inset;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.formulario legend {
+  font-weight: 300;
+  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.25rem);
+  color: rgb(125, 125, 179);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+/* Lista como contenedor Flex vertical */
+.formulario ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Cada fila del formulario es Flex con dos columnas (label + campo) */
+.formulario ul li {
+  display: flex;
+  flex-wrap: wrap; /* permite romper a 2 líneas en móvil */
+  gap: 10px;
+  align-items: center;
+}
+
+/* Columna de etiqueta */
+.formulario ul li label {
+  flex: 0 0 160px; /* ancho fijo en desktop */
+  max-width: 100%;
+  font-size: 1rem;
+}
+
+/* Columna de campo */
+.formulario ul li input,
+.formulario ul li textarea {
+  flex: 1 1 300px; /* crece y ocupa resto */
+  min-width: 200px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+.formulario ul li textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Botón */
+.formulario ul li button {
+  margin-left: auto; /* empuja a la derecha en desktop */
+  padding: 10px 18px;
+  border: none;
+  background: #333;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  
+  letter-spacing: 0.06em;/* Espaciado entre letras */
+  border-radius: 4px;
+  
+}
+.formulario ul li button:hover {
+  background: rgb(111, 175, 46);
+}
+
+/* Aside */
+.aside {
+  flex: 1 1 25%; /* Ocupa aproximadamente el 25% del ancho de .contenido  y crece/decrece si tiene espacio disponible*/
+  order: 1;
+
+  display: flex; /* Activa Flexbox para los elementos internos */
+  flex-direction: column;  /* Organiza los elementos en columna */
+  gap: 12px;
+}
+.aside h3 {
+  align-self: center;
+  font-weight: 300;
+  font-size: clamp(1.125rem, 0.8vw + 1rem, 1.5rem);
+  color: rgb(125, 125, 179);
+  text-transform: uppercase;
+}
+.aside p {
+  text-align: justify;
+}
+.aside .galeria {
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px #44422a33;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.aside img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Footer */
+.footer {
+  background: #ccc;
+  color: aliceblue;
+  border: 1px solid rgba(225, 225, 226, 0.8);
+  box-shadow: 0 0 10px #ccc;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+}
+.footer p {
+  font-size: 1.625rem;
+}
+.footer .autor {
+  flex: 1 1 65%;
+}
+.footer .contacto {
+  flex: 1 1 auto;
+}
+
+/* Breakpoint 1: <= 1024px */
+@media (max-width: 1024px) {
+  .contenido {
+    gap: 16px;
+  }
+  .formulario ul li label {
+    flex-basis: 140px;
+  }
+}
+
+/* Breakpoint 2: <= 768px (tablets) */
+@media (max-width: 768px) {
+  .contenido {
+    flex-direction: column;
+    padding: 16px;
+  }
+  .main,
+  .aside {
+    order: initial;
+    flex-basis: 100%;
+  }
+
+ 
+  .formulario ul li {
+    flex-direction: column;
+    align-items: stretch; /* Hace que ese ítem se estire para ocupar todo el espacio disponible en el eje transversal. */
+  }
+  .formulario ul li label {
+    flex-basis: auto;
+    width: 100%;
+  }
+  .formulario ul li input,
+  .formulario ul li textarea {
+    flex-basis: auto;
+    width: 100%;
+  }
+  .formulario ul li button {
+    align-self: stretch;
+    margin-left: 0;
+  }
+}
+
+/* Breakpoint 3: <= 480px (móviles) */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px;
+    text-align: center;
+  }
+  .contenido {
+    padding: 12px;
+    gap: 12px;
+  }
+  .footer {
+    flex-direction: column; /* Cambia la dirección a columna */
+    text-align: center;
+    gap: 6px;
+  }
+  .footer .autor,
+  .footer .contacto {
+    flex-basis: 100%; /* Ocupa todo el ancho */
+  }
+}

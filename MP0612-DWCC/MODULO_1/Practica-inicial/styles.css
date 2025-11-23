@@ -1,0 +1,112 @@
+/** FONTS **/
+
+.alumni-sans-pinstripe-regular {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.alumni-sans-pinstripe-regular-italic {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.open-sans-uniquifier {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.genos-uniquifier {
+  font-family: "Genos", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+body {
+  margin: 0;
+  padding: 0 5rem 0 5rem;
+  overflow: scroll;
+}
+
+
+header{
+  padding: 2em 2em 0em 2em;
+}
+header h1{
+  font-size: 72px;
+  text-align: center;
+  color: rgb(45, 26, 126);
+}
+main {
+padding: 0rem 6rem 6rem 6rem;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+table {
+  border-radius: 15%;
+}
+table, td{
+  border-collapse: collapse;
+  border-radius: 15px;
+  margin: 0.5em;
+  padding: 2rem;
+  text-align: center;
+  /* font-size: 24px; */
+}
+tr td {
+  margin: 1rem 1rem 1rem 1rem;
+}
+td {
+  /* background-color: red; */
+}
+.flex-cont span {
+  width: 20%;
+  justify-self: flex-start;
+  padding: 1rem;
+  align-self: center;
+}
+
+.flex-cont {
+  display: flex;
+  flex-direction: column;
+}
+.resaltadoHoras{
+  /* font-weight: 800; */
+  font-size: 40px;
+  background-color: grey;
+  color: white;
+}
+
+.bkcolor-yellow {
+  background-color: yellow;
+}
+.bkcolor-blue {
+  background-color: rgb(0, 162, 255);
+}
+.bkcolor-general {
+  background-color: rgb(255, 255, 255);
+}
+.negrita {
+  font-weight: bold;
+}
+.espaciado-letra {
+  letter-spacing: 0.1rem;
+}
+.letra-grande {
+  font-size: 25px;
+}
+.borde-suave {
+  border-radius: 15px;
+}

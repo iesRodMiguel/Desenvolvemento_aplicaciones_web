@@ -1,0 +1,6 @@
+cuando se lanza una excepcion se suele indicar en la cabecera del método que se lanza.
+
+En excepciones vigiladas de hecho es obligatorio.
+En excepciones no vigiladas como 'IllegalArgumentException' no es obligatorio. --> Consultar en los apuntes o en la web que es una excepcion vigilada y no vigilada.
+
+En el examen habrá todo lo del ejercicio agenda pero también pueden entrar otras cosas como herencia (dijo hoy xavi))

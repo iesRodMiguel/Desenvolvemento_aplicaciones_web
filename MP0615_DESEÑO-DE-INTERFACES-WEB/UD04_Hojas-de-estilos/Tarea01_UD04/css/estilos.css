@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* El valor del width y height incluye el contenido, el padding y el border. */
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #272949;
+}
+p {
+  line-height: 1.5em;
+  font-size: 1em;
+}
+
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
+.header{
+  background-color: rgb(48, 78, 48);
+}
+
+.header h2{
+  padding: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+
+
+.contenido {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: rgb(213, 230, 224);
+}
+
+.main {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  flex-basis: 70%;
+  order: 1;
+}
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
+.info h1{
+color: rgb(144, 226, 43);
+text-transform: uppercase;
+font-weight: normal;
+}
+
+.formulario{
+  border: solid 1px rgb(173, 171, 171);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.formulario legend {
+  text-transform: uppercase;
+  color: rgb(125, 125, 179);
+  font-size: 1.2em;
+  font-weight: 250;
+
+  align-self: center;
+}
+.formulario ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.formulario ul li{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em 0;
+
+  flex: 1 1 100%;
+}
+.formulario li label{
+
+
+  flex: 1 1 15%;
+}
+.formulario li input {
+  padding: 0.5em;
+
+
+
+  flex: 1 1 60%;
+}
+.formulario li textarea {
+  padding: 0.5em;
+
+  
+  flex: 1 1 60%;
+}
+/* .formulario li :last-child { /***? ¿Por qué esto no funciona? */
+  /*justify-self: flex-end; 
+
+} */
+.formulario li button {
+  margin-left: auto;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  background-color: rgb(53, 52, 52);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  gap: 1em;
+
+  flex-basis: 30%;
+}
+.aside h3 {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1.5em;
+}
+.galeria img{
+  border-radius: 2%;
+}
+
+
+
+
+.footer {
+  background-color: rgb(206, 206, 206);
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2em;
+  font-weight: 400;
+  color: white;
+}
