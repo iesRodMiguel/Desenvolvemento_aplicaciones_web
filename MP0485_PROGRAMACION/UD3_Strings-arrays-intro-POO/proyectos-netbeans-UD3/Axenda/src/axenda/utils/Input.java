@@ -8,26 +8,30 @@ package axenda.utils;
  *
  * @author miguel
  */
+
+import java.util.InputMismatchException; /*Excepcion propia de Integer.pareInt() y otros métodos
+                                          de Integer para cuando el input que se ha introducido no es un numero*/
 import java.util.Scanner;
 
 public class Input {
     
-    /*static final: Estas variables son constantes (non cambian) e pertencen á clase, non a obxectos específicos.*/
+    /*static final: Estas variables son constantes (non cambian) e pertencen á clase, non a obxectos específicos. Al ponerles
+    final, no se pueden modificar ni desde dentro de la clase */
     
     private static final String REGEX_TELEFONO = "^(\\+34)?[0-9]{9}$";   
-//    private static final String REGEX_TELEFONO = "^(manelregexp)?[0-9]{9}$";
     private static final String REGEX_EMAIL = "^[a-z0-9][a-z0-9._-]+\\@[a-z]+\\.[a-z]{2,4}$";
-//    public static final String title = "Pulsa '*' para cancelar";
     private static final Scanner scn = new Scanner(System.in);
+//    int option;
 
 
 
     
     
-    public void testNif (String nif) throws IllegalArgumentException{
+    public static void testNif (String nif) throws IllegalArgumentException{
         
         char[] control = {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
-        char letra = nif.charAt(8);
+        
+        char letra = Character.toUpperCase(nif.charAt(8));
         String num_str = nif.substring(0, 8);
         
         if (nif == null || nif.length() != 9){
@@ -37,9 +41,12 @@ public class Input {
         
         try {
              
-                int num = Integer.parseInt(num_str);
+                int num = Integer.parseInt(num_str); /*INTENTAMOS CONVERTIR LA STRING num_str A NUMERO MEDIANTE EL MÉTODO parseInt() de 
+                la clase Integer*/
                 int index = num%23;
                 char letraControl = control[index];
+                
+                System.out.println("El dni: " + nif + " es válido");
                 
                 if (letra!=letraControl) {
                 
@@ -57,7 +64,7 @@ public class Input {
     
     }
     
-    public void testEmail (String email) throws IllegalArgumentException {
+    public static void testEmail (String email) throws IllegalArgumentException {
     
         if(!email.toLowerCase().matches(REGEX_EMAIL)){
         
@@ -68,7 +75,7 @@ public class Input {
     
     }
     
-    public void testPhone (String phone) throws IllegalArgumentException {
+    public static void testPhone (String phone) throws IllegalArgumentException {
         
         if (!phone.matches(REGEX_TELEFONO)){
         
@@ -79,7 +86,7 @@ public class Input {
     
     public String readText (String title) throws CancelException{
         
-//        title = "Introduce un texto. Pulsa ";
+//      title = "Introduce un texto. Pulsa ";
         System.out.println(title + " (* para cancelar): ");
 
         String input = scn.nextLine();
@@ -92,6 +99,8 @@ public class Input {
 
         return input;
         
+        /*Pide un texto. Si es un asterisco lanza la CancelException que diseñamos, si no, almacena el texto en la variable input*/
+       
     }
     
     public String readText (String title, String defaultValue) throws CancelException {
@@ -231,37 +240,105 @@ public class Input {
            cunha mensaxe axeitada
     */
     
-    public String option (String title, String validos) throws CancelException {
-
-        String input = readText(title, validos);
-        String option = null;
-        
-        System.out.println("AXENDA");
-        System.out.println("=======");
-        System.out.println("1. Opción 1");
-        System.out.println("2. Opción 2");
-        System.out.println("3. Opción 3");
-
-        
-        while (!validos.equals("4")){
-            switch (validos) {
-                case "1":
-                    option = "1";
-                    System.out.println("Opcion elegida: "+option);
-                case "2":
-                    option = "2";
-                    System.out.println("Opcion elegida: "+option);
-
-                case "3":                    
-                    option = "3";
-                    System.out.println("Opcion elegida: "+option);
-
+    public String readNif(String title) throws CancelException {
+        while (true) {
+            String input = readText(title);
+            try {
+                testNif(input);
+                return input;
+            } catch (IllegalArgumentException e) {
+                System.out.println("Erro: " + e.getMessage());
             }
         }
-    return input;
+    }
+    
+    
+    public int option () throws CancelException {
+
+//        String input = readText(title, validos);
+        int option = 0;
+//        String trash;
+        
+        
+        do {
+        
+            System.out.println("AXENDA");
+            System.out.println("=======");
+            System.out.println("1.Listado de contactos");
+            System.out.println("2.Alta de contactos");
+            System.out.println("3.Buscar contactos");
+            System.out.println("4. Opción 4 (Salir)");
+    
+            try{
+                System.out.println("Elije una opción");
+                
+                option = scn.nextInt();
+                scn.nextLine();
+//              option = Integer.parseInt(scn.nextLine());
+//              trash=scn.nextLine();
+                System.out.println("opcion ha almacenado: " + option);
+                
+                switch (option) {
+                    
+                    case 1:
+                    
+                        listado_contactos();
+                        break;
+                        
+                    case 2:
+                    
+                        alta_contactos();
+                        break;
+                        
+                    case 3:
+                    
+                        buscar_contactos();
+                        break;
+                
+                }
+                
+            } catch (InputMismatchException e) {
+//                System.out.println("Introdujiste: "+trash+". Debe introducir un número entre 1 y 4");
+                scn.nextLine();
+
+                
+
+            }
+            
+        
+        
+        } while (option!=4);
+        
+        //while ((opcion/1)!=opcion);
+        
+        //System.out.println("opcion ha almacenado: " + opcion);
+        return option;
     
     }
     
+    public String areYouSure (String title, String validos){
+        
+        System.out.print(title + validos);
+        String siONo = scn.nextLine();
+        
+        if (siONo.length() == 1 && validos.toLowerCase().contains(siONo)){
+             
+            return siONo;
+        }
+        return null;
+    }
+    
+    
+    
+    public static void listado_contactos() {
+            System.out.println("Opción en desarrollo");
+    }
+    public static void alta_contactos() {
+            System.out.println("Opción en desarrollo");
+    }
+    public static void buscar_contactos() {
+            System.out.println("Opción en desarrollo");
+    }
     
     
     

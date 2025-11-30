@@ -6,6 +6,12 @@
             <file>file:/home/miguel/Informatica/0_FP_Desenv-Aplic-Web/CURSO-1_Desenvolvemento-aplicacions-web/MP0485_PROGRAMACION/UD3_Strings-arrays-intro-POO/proyectos-netbeans-UD3/Axenda/src/axenda/Axenda.java</file>
             <file>file:/home/miguel/Informatica/0_FP_Desenv-Aplic-Web/CURSO-1_Desenvolvemento-aplicacions-web/MP0485_PROGRAMACION/UD3_Strings-arrays-intro-POO/proyectos-netbeans-UD3/Axenda/src/axenda/utils/Input.java</file>
             <file>file:/home/miguel/Informatica/0_FP_Desenv-Aplic-Web/CURSO-1_Desenvolvemento-aplicacions-web/MP0485_PROGRAMACION/UD3_Strings-arrays-intro-POO/proyectos-netbeans-UD3/Axenda/src/axenda/utils/CancelException.java</file>
+            <file>file:/home/miguel/Informatica/0_FP_Desenv-Aplic-Web/CURSO-1_Desenvolvemento-aplicacions-web/MP0485_PROGRAMACION/UD3_Strings-arrays-intro-POO/proyectos-netbeans-UD3/Axenda/src/axenda/model/Persona.java</file>
+            <file>file:/home/miguel/Informatica/0_FP_Desenv-Aplic-Web/CURSO-1_Desenvolvemento-aplicacions-web/MP0485_PROGRAMACION/UD3_Strings-arrays-intro-POO/proyectos-netbeans-UD3/Axenda/src/axenda/model/Contacto.java</file>
+            <file>file:/home/miguel/Informatica/0_FP_Desenv-Aplic-Web/CURSO-1_Desenvolvemento-aplicacions-web/MP0485_PROGRAMACION/UD3_Strings-arrays-intro-POO/proyectos-netbeans-UD3/Axenda/src/axenda/model/DAO/ContactosDAO.java</file>
+            <file>file:/home/miguel/Informatica/0_FP_Desenv-Aplic-Web/CURSO-1_Desenvolvemento-aplicacions-web/MP0485_PROGRAMACION/UD3_Strings-arrays-intro-POO/proyectos-netbeans-UD3/Axenda/src/axenda/model/DAO/StorageFull.java</file>
+            <file>file:/home/miguel/Informatica/0_FP_Desenv-Aplic-Web/CURSO-1_Desenvolvemento-aplicacions-web/MP0485_PROGRAMACION/UD3_Strings-arrays-intro-POO/proyectos-netbeans-UD3/Axenda/src/axenda/model/DAO/DuplicateElement.java</file>
+            <file>file:/home/miguel/Informatica/0_FP_Desenv-Aplic-Web/CURSO-1_Desenvolvemento-aplicacions-web/MP0485_PROGRAMACION/UD3_Strings-arrays-intro-POO/proyectos-netbeans-UD3/Axenda/src/axenda/model/forms/Forms.java</file>
         </group>
     </open-files>
 </project-private>

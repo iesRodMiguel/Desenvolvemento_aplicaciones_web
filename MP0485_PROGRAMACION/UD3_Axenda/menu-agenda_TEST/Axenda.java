@@ -6,11 +6,19 @@ public class Axenda {
 
     public static void main(String[] args) {
         
-        holaMundo();
+        bienvenidxsTest();
+        
+        Persona persona1 = new Persona("Juan","Pérez Dominguez","53389965G");
+        Persona persona2 = new Persona("Pedro","Alvarez Dominguez","53389965G");
+        
+        System.out.println(persona1.toString());
+        System.out.println(persona2.toString());
+        System.out.println("¿Son a mesma persoa? "+persona1.equals(persona2));
+        
         option();
     }
 
-    public static void holaMundo () {
+    public static void bienvenidxsTest () {
         System.out.println("Bienvenidx a la clase para probar métodos del proyecto 'Axenda':");
         System.out.println("======================================");
         System.out.println(" ");
@@ -37,9 +45,9 @@ public class Axenda {
         
             System.out.println("AXENDA");
             System.out.println("=======");
-            System.out.println("1. Opción 1");
-            System.out.println("2. Opción 2");
-            System.out.println("3. Opción 3");
+            System.out.println("1.Listado de contactos");
+            System.out.println("2.Alta de contactos");
+            System.out.println("3.Buscar contactos");
             System.out.println("4. Opción 4 (Salir)");
     
             try{
